@@ -1,0 +1,10 @@
+GATE_PORT: int = 43713
+
+HTTP_PORT: int = 8000
+SSH_PORT: int = 2222
+MQTT_PORT: int = 1883
+REDIS_PORT: int = 6666
+
+NAME = "Charlie"
+FOLDER = "./static"
+PASSWORD = b"$2b$10$B3CzRP87/zZ1FcP9sE8J3.4jimlSzLbiYIQI3bND7WyFalLWwKDoW" # UlLOPNeEak9rFfmL

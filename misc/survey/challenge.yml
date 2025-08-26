@@ -1,0 +1,24 @@
+name: Survey
+author: PECAN+ CTF
+category: misc
+description: |
+  Tell us what you thought about PECAN+ CTF 2025. Every bit of feedback helps!
+
+  <https://forms.cloud.microsoft/r/q5ESPCft24>
+attribution: PECAN+ CTF
+type: dynamic
+
+extra:
+  initial: 250
+  decay: 2
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{feedback_submitted_job_done}
+
+state: hidden
+
+version: '0.1'

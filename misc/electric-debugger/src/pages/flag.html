@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/flag.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+</head>
+<body>
+     <div id="main">
+        <img draggable="false" src="imgs/icon.png" />
+        <label>Welcome to our premium app!</label>
+        <p>Bet you don't see features like this one in previous versions, huh ?</p>
+        <h2></h2>
+        <button onclick="showflag()">SHOW THE FLAG</button>
+     </div> 
+     
+    <script>    
+        function showflag(){
+            document.querySelector("h2").innerHTML = (()=>{
+                const ____ = [110,95,36,104,48,99,107,36,95,121,48,118,125];
+                const _ = [112,101,99,97,110,123,101,33,51,99,116,114,49,99,33];
+                const ___ = [121,95,116,104,49,110,103,95,116,104,64,116,95,99,97];
+                const __ = [116,121,95,49,36,110,116,95,43,104,101,95,48,110,49];
+                return String.fromCharCode(...(_.concat(__).concat(___).concat(____)));
+            })();
+        }
+    </script>
+
+</body>
+</html>

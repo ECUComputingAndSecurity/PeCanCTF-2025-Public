@@ -1,0 +1,72 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #1f1f1f;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+
+#login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: auto;
+  display: flex;
+}
+
+#login>form {
+  margin: auto;
+}
+
+#login>form>div {
+  display: flex;
+  gap: 1em;
+}
+
+form {
+  padding: 2em;
+}
+
+#logint {
+  height: auto;
+  margin: auto;
+  font-family: font1;
+  margin-left: 0;
+  font-size: 2em;
+}
+
+#login>form img {
+  height: 4em;
+  width: 4em;
+  transform: rotate(25deg);
+}
+
+/* #c {
+  min-width: 19em;
+  margin: auto;
+  background-color: #181818;
+} */
+/* 
+#c button:hover {
+  cursor: pointer;
+}
+img {
+  height: 2em;
+  width: 2em;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+} */

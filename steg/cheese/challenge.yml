@@ -1,0 +1,27 @@
+name: Cheese
+author: Kelly Kallane
+category: steg
+description: |
+  For this challenge, one must delve in to the depths of the provided image file as part of the cheese curse, using various tools to uncover what some would discard as completely random text.
+
+  If only this string could be manipulated or converted somehow, this could be our only hope in finding the flag to lift the cheese curse once and for all......
+
+  Enjoy :)
+attribution: Kelly Kallane
+type: dynamic
+
+extra:
+  initial: 250
+  decay: 2
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{nonfakeflag}
+
+files:
+- cheese.jpg
+
+version: '0.1'

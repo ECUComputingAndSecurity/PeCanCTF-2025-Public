@@ -1,0 +1,27 @@
+name: '#InMyLibraryClashingEra'
+author: Ming Ren Milen Leong
+category: crypto
+description: |
+  I have created a comically simple? hash function. Find a clash and I'll give you the library to drive to. That is, if you can read what i have. My bad I drank 32 ml of Base model Dasani before making this.
+
+  pycryptodome may be needed, so install this before hand.
+
+  Remember to encapsulate the flag in `pecan{flag}`.
+attribution: Ming Ren Milen Leong
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{itscollidingtime}
+
+files:
+- Collider.py
+
+version: '0.1'

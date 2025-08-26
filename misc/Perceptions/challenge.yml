@@ -1,0 +1,26 @@
+version: "0.1"
+name: Perceptions
+category: misc
+author: Memphis Marshall (~aurillium)
+attribution: Memphis Marshall (~aurillium)
+description: |
+  Check out this blog I made! It has a cool backend, apparently it uses less ports.
+
+flags:
+  - type: static
+    content: pecan{p3rsp3c71v3.15.k3y}
+    data: case_insensitive
+
+type: dynamic
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+hints:
+  - We perceive servers through protocols...
+  - We know it's a Linux server, what are some common remote access protocols for Linux servers?
+
+image: .
+protocol: tcp

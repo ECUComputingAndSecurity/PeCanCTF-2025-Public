@@ -1,0 +1,93 @@
+name: Deploy containers to Kubernetes
+
+on:
+  push:
+    branches:
+      - main
+    # TODO match on regex instead
+    paths:
+      - pwn/**
+      - web/**
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - uses: actions/setup-python@v5.4.0
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - name: Setup ctfcli
+        run: |
+          pip install -r requirements.txt
+          ctf plugins install https://github.com/pl4nty/ctfcli-deploy-kubernetes.git
+
+          curl -L https://github.com/kubernetes/kompose/releases/download/v1.32.0/kompose-linux-amd64 -o kompose
+          chmod +x kompose
+          sudo mv ./kompose /usr/local/bin/kompose
+          echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
+
+          mkdir .ctf
+          cat <<EOF > .ctf/config
+          [config]
+          url = https://${{ vars.CTFD_DOMAIN }}
+          access_token = ${{ secrets.CTFD_TOKEN }}
+
+          [cookies]
+          site_password = ${{ secrets.CTFD_SITE_PASSWORD }}
+
+          [challenges]
+          EOF
+
+          shopt -s extglob
+          for chal in ?(pwn|web)/*/; do
+            echo "$chal = $chal" >> .ctf/config
+          done
+
+      - name: Setup container registry
+        uses: docker/login-action@v3.4.0
+        with:
+          registry: ${{ vars.REGISTRY}}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - uses: docker/setup-buildx-action@v3.10.0
+      - name: Get auth params for buildx cache
+        uses: crazy-max/ghaction-github-runtime@v3.0.0
+      # TODO raise issue, throws error even if target challenge isn't deployable. ignore all errors for now
+      - name: Deploy containers
+        run: |
+          docker() {
+            if [ "$1" = "build" ]; then
+              command docker buildx build --cache-from type=gha --cache-to type=gha,mode=max "${@:2}"
+            else
+              command docker "$@"
+            fi
+          }
+          ctf challenge deploy --skip-login --host "kubernetes://${{ vars.KUBE_HOST }}?registry=${{ vars.REGISTRY }}" || true
+
+      - name: Setup GitHub container registry
+        uses: docker/login-action@v3.4.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Push container images to GitHub
+        run: |-
+          images=$(docker images $REGISTRY/*:latest --format "{{.Repository}}")
+          for image in $images; do
+            lowercase=${GITHUB_REPOSITORY_OWNER,,}
+            newtag=${image//$REGISTRY/ghcr\.io\/$lowercase}:latest
+            docker tag $image:latest $newtag
+            docker push $newtag
+          done
+        env:
+          REGISTRY: ${{ vars.REGISTRY }}

@@ -1,0 +1,23 @@
+name: Old is gold
+author: Aleksandr Maksimov
+category: misc
+description: |
+  The previous sysadmin has been working here for almost 47 years. You discover this file on his old PC...
+attribution: Aleksandr Maksimov
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{learn_Th0se_great_motions}
+
+files:
+- readme_old.txt
+
+version: '0.1'

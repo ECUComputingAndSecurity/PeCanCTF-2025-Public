@@ -1,0 +1,23 @@
+name: In the words of Taylor
+author: Karina (ECU)
+category: steg
+description: |
+  I'll write your name... or, at least a flag.
+attribution: Karina (ECU)
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{Keep you second guessin}
+
+files:
+  - In the words of Taylor.pdf
+
+version: "0.1"

@@ -1,0 +1,31 @@
+name: Electric Debugger
+author: ScriptKidding
+category: misc
+description: |
+  The competitor of other popular debuggers has just released a new version of their Electric debugger this morning.
+  Unfortunately, it's no longer free or open-source. However, rumors said bounties are available if someone manages
+  to hack it.
+attribution: ScriptKidding
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{e!3ctr1c!ty_1$nt_+he_0n1y_th1ng_th@t_can_$h0ck$_y0v}
+
+hints:
+  - "`./Electric Debugger-1.0.0.AppImage --appimage-extract-and-run --no-sandbox`"
+  - Sometimes, it's a good practice to try to figure out what an executable is coded in first.
+  - You don't have to know everything! Just learn on the go and Google based on what information you have collected.
+
+files:
+  - Electric Debugger 1.0.0.exe
+  - Electric Debugger-1.0.0.AppImage
+
+version: "0.1"

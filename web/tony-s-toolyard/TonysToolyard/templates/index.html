@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony's Tools</title>
+    {% include "_style.html" %}
+</head>
+<body>
+    {% include "_navbar.html" %}
+    <h1>Tony's Tools</h1>
+    <p>What would you like to buy?</p>
+    <form action="/search" method="GET">
+        Item: <input type="text" id="item" name="item">
+        <input type="submit" value="Submit">
+    </form>
+    {% if not errorOccured %}
+        {% if results %}
+            <h2>Results:</h2>
+            {% for name, price in results %}
+                <p class="results">Name: {{ name }} - Price: ${{ price }}</p>
+            {% endfor %}
+        {% elif searched%}
+            <p>0 results</p>
+        {% endif %}
+    {% else %}
+        <p class="error">{{ results }}</p>
+    {% endif %}
+</body>
+</html>

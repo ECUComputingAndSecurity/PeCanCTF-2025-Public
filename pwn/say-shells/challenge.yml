@@ -1,0 +1,26 @@
+name: Say Shells!
+author: Starnsworth
+category: pwn
+description: |
+  A simple web app lets you upload image files to view their EXIF metadata. But something feels off... are your images being analyzed a little too deeply?
+  Can you trick the server into running a command of your own — and reveal the contents of a hidden flag.txt file?
+
+  Note: Only image file uploads are allowed. You won't need brute force — just a little creativity and the right format.
+attribution: Starnsworth
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: .
+protocol: https
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{h1dd3n_p4yl04d_1n_pl41n_51gh7}
+
+version: "0.1"

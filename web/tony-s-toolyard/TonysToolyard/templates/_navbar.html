@@ -1,0 +1,9 @@
+<nav>
+    <a href="/">Home</a> |
+    {% if logged_in %}
+        <a href="/logout">Logout</a>
+        <a href="/user">My Profile</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+</nav>

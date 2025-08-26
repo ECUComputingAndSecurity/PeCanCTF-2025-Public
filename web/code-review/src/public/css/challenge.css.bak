@@ -1,0 +1,214 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+
+/* 0a0a0a */
+#head>h1 {
+    font-family: FontMedium;
+    font-size: 1.5em;
+    color: #368dfe;
+    margin: auto;
+}
+
+#head {
+    position: relative;
+    grid-area: header;
+    padding: 1em;
+    border-bottom: 2px solid rgba(137, 137, 137, 0.184);
+}
+
+#poc {
+    background-color: #1c1c1c;
+    grid-area: poc;
+    border-top: 2px solid rgba(137, 137, 137, 0.184);
+}
+
+#poc>pre {
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#poc>pre>code {
+    height: 100%;
+}
+
+#poc>h2 {
+    font-size: 1em;
+    margin: auto;
+    padding: 1em;
+}
+
+
+/* Style the scrollbar track (background) */
+#writeup::-webkit-scrollbar,
+#about::-webkit-scrollbar,
+#poc code::-webkit-scrollbar {
+    width: 7px;
+    /* Width of the scrollbar */
+}
+
+/* Style the scrollbar track (background) */
+#writeup::-webkit-scrollbar-track,
+#about::-webkit-scrollbar-track,
+#poc code::-webkit-scrollbar-track {
+    background: transparent;
+    /* Transparent background */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+#writeup::-webkit-scrollbar-thumb,
+#about::-webkit-scrollbar-thumb {
+    background-color: rgba(78, 78, 78, 0.364);
+    border-radius: 10px;
+}
+
+#poc code::-webkit-scrollbar-thumb {
+    background-color: rgba(70, 94, 146, 0.364);
+    border-radius: 10px;
+}
+
+#poc code::-webkit-scrollbar-thumb:hover {
+    background: #445e80;
+}
+
+/* Optional: Style the scrollbar thumb when hovered */
+#writeup::-webkit-scrollbar-thumb:hover,
+#about::-webkit-scrollbar-thumb:hover {
+    background: #2F80ED;
+    /* Darker color on hover */
+}
+
+#writeup,
+#about {
+    overflow: auto;
+    padding: 1.5em;
+}
+
+#writeup {
+    /* padding-top: 0;
+    padding-bottom: 0; */
+    border-left: 2px solid rgba(137, 137, 137, 0.184);
+    grid-area: writeup;
+}
+
+#about {
+    grid-area: about;
+    overflow: auto;
+}
+
+.context>* {
+    box-sizing: border-box;
+}
+
+.context {
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: auto 1fr 50%;
+    grid-template-areas:
+        "header header"
+        "about writeup"
+        "poc writeup"
+    ;
+}
+
+.describe {
+    font-family: FontRegular;
+    color: rgba(255, 255, 255, 0.435);
+}
+
+
+#chalname {
+    color: rgba(255, 255, 255, 0.328);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#chalname:hover {
+    color: rgb(255, 255, 255);
+}
+
+
+#main {
+    height: 100%;
+    background-color: #212121;
+}
+
+#main>div {
+    background-color: transparent;
+}
+
+.sidebar {
+    background: #56CCF2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2F80ED, #56CCF2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: 100%;
+    padding: 0.5em;
+}
+
+#flag {
+    height: 2.5em;
+    width: 2.5em;
+
+}
+
+#archive {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: auto;
+    cursor: pointer;
+    /* border: 2px solid red; */
+    /* border-radius: 5px; */
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 0.6em;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+
+#archive:hover {
+    background-color: white;
+}
+
+#archive:hover * {
+    filter: invert(1);
+}
+
+#archive:active {
+    transform: scale(0.9);
+}
+
+#archive>* {
+    margin: auto;
+    cursor: pointer;
+}
+
+#archive>label {
+    font-family: FontRegular;
+    font-size: 14px;
+}
+
+#archive>img {
+    height: 1.5em;
+    width: 1.5em;
+    filter: invert(1);
+}
+
+#archive a {}

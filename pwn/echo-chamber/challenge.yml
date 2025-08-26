@@ -1,0 +1,26 @@
+name: Echo Chamber
+author: Raahguu
+category: pwn
+description: |
+  I found this weird service that just replies back with whatever you send it, its like a weird mirror or reflection or something.
+attribution: Raahguu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: .
+protocol: tcp
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{533_buff3r_0v3rf70w_c4n_b3_345y!}
+
+files:
+- EchoChamber
+
+version: '0.1'

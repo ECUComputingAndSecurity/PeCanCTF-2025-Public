@@ -1,0 +1,82 @@
+name: Create challenge from issue form
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+
+jobs:
+  main:
+    if: github.event.action == 'opened' || github.actor == 'pl4nty'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - uses: actions/setup-python@v5.4.0
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - uses: zentered/issue-forms-body-parser@v2.2.0
+        id: form
+
+      - name: Slugify challenge name
+        id: slugify
+        uses: rlespinasse/slugify-value@v1.4.0
+        with:
+          key: title
+          value: ${{ github.event.issue.title }}
+
+      - name: Make challenge directory and metadata
+        id: chal
+        run: |
+          directory="${{ env.category }}/${{ steps.slugify.outputs.slug }}"
+          mkdir -p $directory
+          echo "directory=$directory" >> $GITHUB_OUTPUT
+          echo "category=${{ env.category }}" >> $GITHUB_OUTPUT
+        env:
+          category: ${{ fromJSON(steps.form.outputs.data).category.text }}
+
+      - name: Create writeup
+        run: printf "%s" "$data" > ${{ steps.chal.outputs.directory }}/README.md
+        env:
+          data: ${{ fromJSON(steps.form.outputs.data).writeup.text }}
+
+      - name: Parse issue form to jinja2 data file
+        run: printf "%s" "$data" | jq 'with_entries(.value = .value.text)' > data.json
+        env:
+          data: ${{ steps.form.outputs.data }}
+
+      - name: Render challenge.yml
+        run: |
+          pip install jinja2-cli
+          jinja2 .github/challenge.jinja2 data.json \
+          --outfile "${{ steps.chal.outputs.directory }}/challenge.yml" \
+          -D name="${{ github.event.issue.title }}"
+          rm data.json
+
+      - uses: peter-evans/create-pull-request@v7.0.8
+        with:
+          branch: patch-${{ github.event.issue.number }}
+          title: ${{ env.title }}
+          body: "Closes #${{ github.event.issue.number }}"
+          commit-message: ${{ env.title }}
+          sign-commits: true
+        env:
+          title: "chals(${{ steps.chal.outputs.category }}): add ${{ steps.slugify.outputs.slug }}"
+
+      - uses: peter-evans/create-or-update-comment@v4.0.0
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            [Click here to upload challenge files](${{ format('{0}/{1}/upload/patch-{2}/{3}',
+              github.server_url,
+              github.repository,
+              github.event.issue.number,
+              steps.chal.outputs.directory
+            )}})

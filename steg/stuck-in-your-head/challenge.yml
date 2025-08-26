@@ -1,0 +1,23 @@
+name: Stuck in Your Head
+author: RiskyMH
+category: steg
+description: |
+  You should listen to my favourite song, and tell me 21 reasons why it's the best!
+attribution: RiskyMH
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 5
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{MO0S1C_4U_L0L!}
+
+files:
+- my_original_music.mp3
+
+version: '0.1'

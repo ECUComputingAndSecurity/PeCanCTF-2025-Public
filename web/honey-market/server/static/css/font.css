@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'font1';
+    src: url('../fonts/Hackdaddy.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'font2';
+    src: url('../fonts/SDGlitch_Demo.ttf') format('truetype');
+}

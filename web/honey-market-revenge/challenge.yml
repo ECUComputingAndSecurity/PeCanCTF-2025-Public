@@ -1,0 +1,29 @@
+name: Honey market revenge
+author: ScriptKidding
+category: web
+description: |
+  Uh oh! The darknet market is up and running again, despite our previous efforts to shut it down.
+  This time, the new admin seems to have learned from their past mistakes, because no source code was leaked.
+  This likely means new protections are in place. The good news? No traps this time so we better move fast 
+  before they tighten the net.
+
+  Notice: The challenge is based on the prior "Honey Market" challenge, it's recommended to finish it first
+  before trying out this one to fully understand the goal.
+attribution: ScriptKidding
+type: dynamic
+
+image: server
+protocol: https
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{y0u_g0tt@_$+0p_pwn1ng_m3___p1e@$3?}
+
+version: "0.1"

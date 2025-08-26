@@ -1,0 +1,24 @@
+name: obfuscated script
+author: Viet Huy Nguyen
+category: forensics
+description: |
+  A staff member found two strange files in their Downloads folder: a script and a file they couldn't read. Can you figure out what they are?
+attribution: Viet Huy Nguyen
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{0bfusc4t3d_c0d3_st111_w0rks_682374}
+
+files:
+- encrypted_flag.txt
+- obfuscated.ps1
+
+version: '0.1'

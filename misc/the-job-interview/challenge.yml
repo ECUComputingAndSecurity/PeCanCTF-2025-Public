@@ -1,0 +1,29 @@
+name: The Job Interview
+author: Riley Grimwood
+category: misc
+description: |
+  You've been hunched over your keyboard, mentally sparring with job interview questions for two relentless hours. Your coffee is cold. Your patience thinner.
+  But just as you're about to submit your final answer, a cryptic message appears on your screen:
+
+  "You've proven your endurance. Now let's test your problem-solving and advanced knowledge of the code you seem to know so well."
+
+  A single URL is dropped into view:
+
+  https://docs.google.com/document/d/e/2PACX-1vRW7X8yMO9cM-b6Ao3FbiZysF3MIjARoeO73z0PlG8O_yeM8xxWAWzt9hdoavlh3HR1IOEwWtJFpczI/pub
+
+  Inside? A grid of cryptic data, deceptively simple, yet hiding something crucial.
+attribution: Riley Grimwood
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: PECAN{Y0U_G07_7H3_J08}
+
+version: "0.1"

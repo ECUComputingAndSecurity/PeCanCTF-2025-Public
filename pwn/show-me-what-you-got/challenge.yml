@@ -1,0 +1,29 @@
+name: Show Me What You GOT!
+author: Jeremy Karagania
+category: pwn
+description: |
+  Show me what you GOT! I want to see what you GOT!
+attribution: Jeremy Karagania
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: .
+protocol: tcp
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{g3tt1ng_schw1fty_w1th_g0t_0v3rwr1t3s_1384311}
+
+files:
+- chall
+- Dockerfile
+- main.c
+- Makefile
+
+version: '0.1'

@@ -1,0 +1,6 @@
+services:
+  web:
+    build:
+      context: ./server
+    ports:
+      - "8080:5000"

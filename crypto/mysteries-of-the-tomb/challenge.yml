@@ -1,0 +1,31 @@
+name: Mysteries of the Tomb
+author: Riley Grimwood
+category: crypto
+description: |
+  In the shadowed depths of the Valley of Kings, explorers have uncovered a tomb long lost to time. At its heart rests an ancient stone tablet, etched meticulously with mysterious glyphs—a pyramid of secrets crafted by devoted scribes guarding the pharaoh's most sacred treasure.
+
+  Through careful translation, a recurring legend emerges: this tablet holds the key to untold power. Armed with your diligent notes and growing knowledge of the symbols, you begin to unravel its cryptic message.
+
+  So far, the inscription at the tablet's apex reads:
+  "To unveil the truth, read the stones at dawn's first light, tracing from the summit down to the shifting sands."
+
+  Format: `pecan{flag}`
+attribution: Riley Grimwood
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{th3c1f3rof4nch}
+
+files:
+  - flag.txt
+  - notes.txt
+
+version: "0.1"

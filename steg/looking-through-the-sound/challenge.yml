@@ -1,0 +1,23 @@
+name: Looking through the sound
+author: Raahguu
+category: steg
+description: |
+  Not every message rides the waves of sound. You'll have to *look* through the noise. Let your eyes do the listening, and let the music spell it out for you. Note: You do *not* need to listen to the audio to do this challenge.
+attribution: Raahguu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{y0u-c4n-4pp4r3nt7y-h1d3-1m4g35-1n-4-sp3ctr0gr4m}
+
+files:
+  - Looking_through_the_Sound.wav
+
+version: "0.1"

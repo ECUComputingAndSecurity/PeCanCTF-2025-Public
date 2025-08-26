@@ -1,0 +1,27 @@
+name: Ego is the weakness
+author: ScriptKidding
+category: osint
+description: |
+  A ransomware operation was spotted recently, which resulted in millions of dollars lost in seconds.
+  After some collaborative investigation with the government, we traced its activities back to an Instagram account, which is believed to belong to the culprit.
+  Can you help us identify the address of a place that this cybercriminal often visits?
+  Our intel indicates that there is a high chance this person is still young, so they haven't graduated yet.
+
+  Flag format: `pecan{Paste in the address from Google Maps}`
+attribution: ScriptKidding
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+connection_info: https://www.instagram.com/scriptkidding/
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{Station Rd, Adelaide SA 5000}
+
+version: "0.1"

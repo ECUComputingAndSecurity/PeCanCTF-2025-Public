@@ -1,0 +1,67 @@
+name: Challenge
+description: Create a new challenge
+title: Add your challenge name here
+body:
+  - type: dropdown
+    attributes:
+      label: Category
+      options:
+        - crypto
+        - forensics
+        - geospatial
+        - indigenous
+        - misc
+        - osint
+        - pwn
+        - rev
+        - steg
+        - web
+        - windows
+    # required fields are only supported on public repos
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Author
+      description: Name or username for players to see
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Email
+      description: Only used if the organisers need to contact you. Please note, this email address will be visible to challenge authors and reviewers
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      placeholder: Add a short description for players to see
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Files
+      description: List of files or folders for players to download
+      placeholder: file.txt,folder
+  - type: input
+    attributes:
+      label: Flag
+      value: pecan{your_flag_here}
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Image
+      description: The Dockerfile path for challenge containers (eg pwn or web)
+      placeholder: .
+  - type: textarea
+    attributes:
+      label: Writeup
+      placeholder: Describe the intended solution to your challenge here. Please don't use markdown headings, it breaks the automation (sorry!)
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Publishing
+      options:
+        - label: Can the challenge and its writeup be released publicly after the CTF?

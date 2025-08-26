@@ -1,0 +1,147 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #1d232a;
+    overflow: hidden;
+
+}
+
+* {
+    color: white;
+}
+
+#frame {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    flex-direction: column;
+}
+
+#banner {
+    display: flex;
+    padding: 1em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.414);
+
+}
+
+#banner>* {
+    margin: auto;
+
+}
+
+#banner>*:not(label) {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#banner img {
+    height: 2em;
+    width: 2em;
+    transform: rotate(25deg);
+}
+
+#banner>a:hover img {
+    transform: rotate(0deg);
+}
+
+#banner>a:hover h1 {
+    color: #feb167;
+}
+
+#banner>a * {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#banner>a {
+    display: flex;
+    gap: 0.5em;
+}
+
+#banner i:hover {
+    transition: color 0.2s ease-in-out;
+    color: #feb167;
+    cursor: pointer;
+}
+
+#banner label {
+    margin-right: 0.5em;
+    font-size: 1.2em;
+}
+
+#banner h1 {
+    font-family: font1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 0px;
+    font-size: 1.3em;
+}
+
+#box {
+    height: 100%;
+    position: relative;
+}
+
+#context {
+    position: absolute;
+    top: 3em;
+    margin-left: 5em;
+    left: 0;
+    right: 0;
+    max-height: 30em;
+    height: 100%;
+    display: flex;
+    gap: 3em;
+}
+
+h2#leaktitle{
+    color: #f47800;
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+.modal-box>form *::placeholder {
+    opacity: 0.5;
+}
+
+.price{
+    color: orange;
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+.boxleak h3{
+    color: #f47800;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.boxleak p{
+    width: 40em;
+    text-align: justify;
+    line-height: 2em;
+}
+
+#context textarea {
+    width: 40em;
+    padding-right: 1em;
+    text-align: justify;
+    line-height: 2em;
+    min-height: 15em;
+    border: none;
+    overflow: none;
+    resize: none;
+    pointer-events: none;
+}
+
+#context>div {
+    flex: 1
+}
+
+#context>img {
+    max-height: 7em;
+    max-width: 7em;
+}

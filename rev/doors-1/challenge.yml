@@ -1,0 +1,26 @@
+name: Doors
+author: Starnsworth
+category: rev
+description: |
+  Your friend has sent you a prototype version of a security key verification program he's writing in C#.
+  There's a few flags in here, but can you help out by finding the flag he forgot to encrypt?
+attribution: Starnsworth
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{strings_arent_secure}
+
+next: Doors 2
+
+files:
+- Doors.zip
+
+version: '0.1'

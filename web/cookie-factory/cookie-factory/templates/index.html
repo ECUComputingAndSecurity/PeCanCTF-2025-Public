@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to Cookie Factory{% endblock %}
+
+{% block content %}
+  <h1 class="mb-4">🍪 Welcome to the Cookie Factory!</h1>
+  <p class="lead">Where every visitor gets a *special* cookie. Some are sweeter than others.</p>
+  <p>Want to chat with our friendly factory admin? Maybe you'll get a taste of our <strong>premium cookies</strong>.</p>
+  <p class="text-muted">Rumor has it... they're so easy to grab, you'd think we left them out on purpose.</p>
+  <div class="d-grid gap-2 col-6 mx-auto mt-4">
+    <a href="/login" class="btn btn-primary btn-lg">Login</a>
+    <a href="/register" class="btn btn-success btn-lg">Register</a>
+    <a href="/changelog" class="btn btn-secondary">View Changelog</a>
+  </div>
+{% endblock %}

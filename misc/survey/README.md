@@ -1,0 +1,1 @@
+Flag is provided in the Thank You message upon completion of the 2025 survey. Survey is released in final hour (?) of competition.

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Changelog{% endblock %}
+{% block content %}
+  <h1 class="mb-4">📜 Changelog</h1>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <strong>v0.87</strong> - Fixed chat alignment bug. Still investigating why JS can't read cookies...
+    </li>
+    <li class="list-group-item">
+      <strong>v0.88</strong> - Realized setting HttpOnly=False fixed the cookie access issue. Yay!
+    </li>
+    <li class="list-group-item">
+        <strong>v0.89</strong> - Added support for rich content in chat. You can now use images or icons in your messages! (Still refining input handling…)
+    </li>
+  </ul>
+{% endblock %}

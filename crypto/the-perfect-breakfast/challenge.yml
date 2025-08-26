@@ -1,0 +1,38 @@
+name: The Perfect Breakfast
+author: Riley Grimwood
+category: crypto
+description: |
+  Ah, breakfast. The moment the sun peeks over the horizon,
+  there's nothing quite like the smell of something sizzling
+  on the stove. I never skip it, not because I'm a morning
+  person, but because breakfast is where I find my true
+  calling. Some people go for cereal, others toast, but me?
+  I like to keep things crispy.
+
+  There's an art to my morning routine. Two eggs, slightly
+  runny. A cup of coffee, black. And the crown jewel: that
+  smoky, salty perfection that never fails to put a smile on
+  my face. My absolute favourite. It's a little indulgent,
+  sure, but worth every bite.
+
+  They say breakfast is the most important meal of the day…
+  maybe that's why I hid the message there. You just have to
+  know where to look underneath the layers.
+attribution: Riley Grimwood
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{64Str1ps0fBac0n}
+
+files:
+  - flag.txt
+
+version: "0.1"

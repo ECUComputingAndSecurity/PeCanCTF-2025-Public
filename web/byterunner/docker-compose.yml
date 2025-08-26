@@ -1,0 +1,15 @@
+services:
+  web:
+    image: nginx:alpine # tiny, has http_sub_module for sub_filter
+    container_name: byterunner_web
+    ports:
+      - "8080:8080" # host:container
+    volumes:
+      # custom Nginx config
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+      # site content (read-only keeps flags safe)
+      - ./public-site:/usr/share/nginx/html/public-site:ro
+      - ./internal-site:/usr/share/nginx/html/internal-site:ro
+      - ./common:/usr/share/nginx/html/common:ro
+    restart: unless-stopped

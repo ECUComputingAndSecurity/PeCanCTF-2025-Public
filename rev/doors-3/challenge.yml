@@ -1,0 +1,22 @@
+name: Doors 3
+author: Starnsworth
+category: rev
+description: |
+  Your friend has one final flag he doesn't think you can get to, as they're testing their ability to detect bypassing the licence check.
+
+  Try to get the last flag. You might need to patch the binary to get there, but there's a few routes to take.
+attribution: Starnsworth
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{who_needs_keys}
+
+version: '0.1'

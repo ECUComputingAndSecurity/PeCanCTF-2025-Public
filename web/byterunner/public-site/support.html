@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteRunner Express - Support</title>
+
+    <!-- reuse the public theme -->
+    <link rel="stylesheet" href="../common/main.css" />
+  </head>
+
+  <body>
+    <!-- Top nav matches index.html -->
+    <header class="navbar">
+      <div class="brand">📦 ByteRunner Express</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="support.html" aria-current="page">Support</a>
+        <a href="status.html">Status</a>
+      </nav>
+    </header>
+
+    <!-- Support form -->
+    <main class="hero">
+      <h1>Need Help with Your Delivery?</h1>
+      <p class="tagline">
+        Our friendly (and definitely professional) team is standing by.
+      </p>
+
+      <form class="support-form">
+        <label>
+          Tracking Number
+          <input
+            name="id"
+            type="text"
+            placeholder="e.g. BRX-987654321"
+            required
+          />
+        </label>
+
+        <label>
+          Email Address
+          <input
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            required
+          />
+        </label>
+
+        <label>
+          How can we help?
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Describe the issue…"
+            required
+          ></textarea>
+        </label>
+
+        <button type="submit">Send Ticket</button>
+      </form>
+
+      <!-- form submit -->
+      <script>
+        /**
+         * @param {Event} event - The form submission event
+         * @returns {void}
+         */
+        function submitForm(event) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          alert("Form submitted! We'll get back to you shortly.");
+
+          document.querySelector(".support-form").reset();
+        }
+        document
+          .querySelector(".support-form")
+          .addEventListener("submit", submitForm);
+      </script>
+
+      <p id="ticket-result" class="results">
+        <!-- Server drops ticket confirmation here -->
+      </p>
+
+      <!-- ==============================================================
+        Internal-only link
+        This is only accessible via the company's internal network anyways.
+        Nonetheless, no need to expose it to the public and risk confusing users.
+    =================================================================-->
+      <p class="staff-only">
+        <a id="staff-dash-link" href="https://intranet.byterunner/">
+          Staff Ticket Dashboard
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <small>
+        © 2025 ByteRunner Express | <em>“Signed. Sealed. Shipped.”</em>
+      </small>
+    </footer>
+  </body>
+</html>

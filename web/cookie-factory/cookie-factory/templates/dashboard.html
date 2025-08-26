@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Welcome, {{ username }}</h1>
+
+{% if role == 'admin' %}
+<div class="alert alert-success">FLAG: {{ flag }}</div>
+{% endif %}
+
+<div class="card mb-3">
+  <div class="card-header">Chat Room</div>
+  <div class="card-body" id="chat-box" style="height: 300px; overflow-y: auto;"></div>
+</div>
+<div id="typing-indicator" class="text-muted fst-italic my-2" style="display: none;">
+  admin is typing...
+</div>
+
+<form id="chat-form" class="d-flex">
+  <input type="text" name="message" id="msg" class="form-control me-2" placeholder="Type your message..." required {% if role == 'admin' %}disabled{% endif %}>
+  <button type="submit" class="btn btn-primary" {% if role == 'admin' %}disabled{% endif %}>Send</button>
+</form>
+
+<a href="/logout" class="btn btn-secondary mt-3">Logout</a>
+
+<script>
+async function loadMessages() {
+  const res = await fetch('/messages');
+  const msgs = await res.json();
+  const box = document.getElementById('chat-box');
+  box.innerHTML = msgs.map(m => `<p><strong>${m.username}:</strong> ${m.content}</p>`).join('');
+  box.scrollTop = box.scrollHeight;
+}
+
+document.getElementById('chat-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const alertArea = document.getElementById('alert-area');
+  if (alertArea) alertArea.innerHTML = '';
+
+  const msgInput = document.getElementById('msg');
+  const sendBtn = this.querySelector('button[type="submit"]');
+  const typingIndicator = document.getElementById('typing-indicator');
+
+  const msg = msgInput.value.trim();
+  if (!msg) return;
+
+  msgInput.disabled = true;
+  sendBtn.disabled = true;
+
+  const box = document.getElementById('chat-box');
+  box.innerHTML += `<p><strong>{{ username }}:</strong> ${msg}</p>`;
+  box.scrollTop = box.scrollHeight;
+
+  msgInput.value = '';
+
+  typingIndicator.style.display = 'block';
+
+  const response = await fetch('/send', {
+    method: 'POST',
+    body: new URLSearchParams({ message: msg })
+  });
+
+  const result = await response.json();
+
+  typingIndicator.style.display = 'none';
+
+  msgInput.disabled = false;
+  sendBtn.disabled = false;
+
+  if (!result.success && alertArea) {
+    alertArea.innerHTML = `
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        ${result.message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`;
+  }
+
+  loadMessages();
+});
+loadMessages();
+</script>
+{% endblock %}

@@ -1,0 +1,24 @@
+name: In the fine print
+author: Flqmmooble
+category: steg
+description: |
+  A set of printed documents were discovered at an undisclosed location. They look seemingly innocent, but something feels off...
+attribution: Flqmmooble
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{dots_in_plain_sight}
+
+files:
+- bob.png
+- printer.jpg
+
+version: '0.1'

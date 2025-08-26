@@ -1,0 +1,22 @@
+name: Online Presence
+author: Monique Cornall
+category: osint
+description: |
+  Through extensive investigating, it seems Corn Man has a social media presence. Could you help us find the account he uses?
+attribution: Monique Cornall
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{gr34t_1nv3st1g4t1ng!}
+
+next: Travelling Around
+
+version: '0.1'

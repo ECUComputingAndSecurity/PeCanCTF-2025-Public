@@ -1,0 +1,25 @@
+name: Doors 2
+author: Starnsworth
+category: rev
+description: |
+  Your friend is really thankful that you found that flag they forgot about!
+
+  They took some time to hide the rest of the flags and hope that you can't get to them, do you think you could reverse their key validation function?
+  Generate your own licence key for their program and get the flag!
+attribution: Starnsworth
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{needs_more_pepper}
+
+next: Doors 3
+
+version: '0.1'

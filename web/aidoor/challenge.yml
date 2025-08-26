@@ -1,0 +1,25 @@
+name: AiDoor
+author: ScriptKidding
+category: web
+description: |
+  We just stumbled across this cool website built by some top-tier cybersecurity researchers to share crazy facts within the industry. Hopefully, it has no vulnerability since that can be quite embarrassing, but hey! Feel free to hack it since no one is stopping you ¯\\_(ツ)_/¯.
+attribution: ScriptKidding
+type: dynamic
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: src
+protocol: https
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{cyb3r$3cur1ty_p30p1e_c@n_m@k3_nn1$tak3$_to0_l01}
+
+hints:
+  - Sometimes, ".bak" is a common folder that developers use to back up their code, hopefully, it's not publicly exposed through the web :O
+
+version: "0.1"

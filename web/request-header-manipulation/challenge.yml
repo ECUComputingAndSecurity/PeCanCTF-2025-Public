@@ -1,0 +1,23 @@
+name: Request Header Manipulation
+author: Raaghuu
+category: web
+description: |
+  I found a website with some crazy privacy rules about who can join.
+attribution: Raaghuu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: app
+protocol: https
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{HTTP_r3q35st_h34d3r5_c4n_g3t_qu1t3_w13rd_4nd_5p3c1f1c}
+
+version: '0.1'

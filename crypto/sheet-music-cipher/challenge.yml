@@ -1,0 +1,23 @@
+name: Sheet Music Cipher
+author: Raahguu
+category: crypto
+description: |
+  No one will ever know that I used a Compound Motivic Musical Cipher. I can merely play music out loud and send messages without anyone being any the wiser.
+attribution: Raahguu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{buckingcipheriscooltoseeinaction}
+
+files:
+- SheetMusicCipher.png
+
+version: '0.1'

@@ -1,0 +1,213 @@
+/* === ByteRunner Express – public theme ======================= */
+
+/* 1. Root palette */
+:root {
+  --brand: #ff914d; /* courier-orange */
+  --brand-dark: #d36d29;
+  --ink: #222;
+  --ink-light: #555;
+  --surface: #fafafa;
+  --card: #fff;
+  --border: #ddd;
+}
+
+/* 2. Reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+/* 3. Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: var(--brand);
+  color: #fff;
+}
+.navbar .brand {
+  font-weight: 700;
+}
+.navbar nav a {
+  margin-left: 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+.navbar nav a[aria-current="page"] {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* 4. Hero */
+.hero {
+  max-width: 42rem;
+  margin: 4rem auto;
+  background: var(--card);
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+.tagline {
+  color: var(--ink-light);
+  margin-bottom: 1.75rem;
+}
+#track-form {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+#track-form input {
+  flex: 1 1 18rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+#track-form button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--brand-dark);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#track-form button:hover {
+  background: var(--brand);
+}
+
+/* 5. Results placeholder */
+.results {
+  margin-top: 2rem;
+  text-align: left;
+  min-height: 6rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 1.5rem;
+  font-family: ui-monospace, monospace;
+  color: var(--ink-light);
+}
+
+/* 6. Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--ink-light);
+}
+
+/* 7. CTA Button */
+.cta {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: var(--brand-dark);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.15s, transform 0.15s;
+  outline: none;
+  border: none;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+.cta:hover {
+  background: var(--brand);
+  transform: translateY(-2px);
+}
+.cta:active {
+  transform: translateY(0);
+}
+
+/* 8. Support Page */
+/* Hide staff-only bits from ordinary visitors */
+.staff-only {
+  display: none;
+}
+
+/* 9. Support Form */
+form {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+form input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+form button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--brand-dark);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+form button:hover {
+  background: var(--brand);
+}
+
+/* 10. Status Page */
+.status-item {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.status-item .status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.status-item h2 {
+  font-size: 1.5rem;
+}
+.status-item .status-header .status {
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+  background-color: darkgreen;
+  color: #fff;
+}
+.status-item p {
+  color: var(--ink-light);
+  text-align: left;
+}

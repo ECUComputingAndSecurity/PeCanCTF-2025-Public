@@ -1,0 +1,25 @@
+name: Legit Security Portal
+category: web
+author: RiskyMH
+attribution: RiskyMH
+
+description: |
+  Welcome to the Legit Security Portal! This app claims to use the most secure technologies available to protect its admin area.
+  Can you find a way in and claim the flag that I have lost 🏴‍☠️?
+
+type: dynamic
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: .
+protocol: https
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{d0nt_Bl1ndly_tru$t_everyth1ng:(}
+
+version: '0.1'

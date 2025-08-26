@@ -1,0 +1,31 @@
+name: Cookie Factory
+author: Wei-Ta Tu
+category: web
+description: |
+  Welcome to the Cookie Factory! 🍪
+  Every visitor gets their own cookie, fresh from the oven.
+  Our admin regularly checks the chatroom for... quality control.
+  Some cookies are more special than others.
+attribution: Wei-Ta Tu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: ./cookie-factory/
+protocol: https
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{d3l1c10u5_c00k135_55bMgl9j5BIl}
+
+hints:
+  - |
+    Observation is key: Sometimes, the easiest way to see "invisible" interactions is by using a request capturing service.
+    Tools like https://webhook.site/ can help you inspect HTTP requests made from unsuspecting victims.
+
+version: '0.1'

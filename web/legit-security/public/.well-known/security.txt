@@ -1,0 +1,1 @@
+CRIDICAL: upgrade next.js version from 15.2.2

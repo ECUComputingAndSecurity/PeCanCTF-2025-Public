@@ -1,0 +1,20 @@
+name: Wise Words
+author: Riley Grimwood
+category: crypto
+description: |
+  I once encountered Augustus, the adopted son and heir of a great general. When I asked him what his greatest strategy was, he simply whispered: Fwfo_Djqifsaa_Fwpmwf
+attribution: Riley Grimwood
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{Even_Cipherz_Evolve}
+
+version: '0.1'

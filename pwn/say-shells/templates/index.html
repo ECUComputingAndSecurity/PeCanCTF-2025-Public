@@ -1,0 +1,65 @@
+<!--
+(C) 2025 Jordan 'Starnsworth' Hawkes for Pecan+ CTF2025
+Starns@starnsworth.com 
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Exif Metadata Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            color: #f8f8f8;
+            background: linear-gradient(135deg, #1f1f2e, #3a3a5c);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="file"],
+        input[type="submit"] {
+            margin: 5px;
+            padding: 8px 12px;
+        }
+        img {
+            max-width: 400px;
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        pre {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 90%;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exif Metadata Viewer</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if file %}
+        <img src="{{ url_for('static', filename=file) }}" alt="Uploaded Image">
+    {% endif %}
+	
+	{% if metadata %}
+        <pre>{{ metadata }}</pre>
+    {% endif %}
+</body>
+</html>

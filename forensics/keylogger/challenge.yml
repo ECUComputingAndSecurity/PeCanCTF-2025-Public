@@ -1,0 +1,23 @@
+name: Keylogger
+author: Viet Huy Nguyen
+category: forensics
+description: |
+  After sensing that something was not right, Ole reported it to the security team. The team decided to investigate the network and noticed something suspicious.
+attribution: Viet Huy Nguyen
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{k3ylogger_p3c4n_2025}
+
+files:
+- captured.pcapng
+
+version: '0.1'

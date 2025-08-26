@@ -1,0 +1,29 @@
+name: Flag Fish
+author: Jeremy Karagania
+category: pwn
+description: |
+  Bjarne is hunting for the coveted flag fish. His first `try` was unsuccessful, can you help him `catch` it this time?
+attribution: Jeremy Karagania
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: .
+protocol: tcp
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{unw1nd1ng_th3_fl4g_f1sh_1n_93442}
+
+files:
+- chall
+-  Dockerfile
+-  main.cpp
+-  Makefile
+
+version: '0.1'

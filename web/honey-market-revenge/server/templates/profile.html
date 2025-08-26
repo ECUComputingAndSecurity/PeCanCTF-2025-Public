@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard - Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/bee.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+    integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.2/sass.min.js"
+    integrity="sha512-mA5b7w9mZvGLWgjIqp9KhWNzkkZ/H3gC4Ua6GOn9m/xl1UF4ghH8GsriKvAYxLsxoKvn6NdebW7kZ6iGB3CGSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body ng-app="honeyApp" ng-controller="honeyController">
+
+    <div id="frame">
+
+        <div id="content">
+
+
+            <h1>Profile</h1>
+
+            <div id="profile" class="">
+                <div>
+                    <legend class="fieldset-legend">Avatar</legend>
+
+                    <div class="avatar">
+
+                        <div class="w-65 rounded">
+
+                            <img alt="avatar" src="/v1/api/profile/get" />
+                        </div>
+                    </div>
+
+                    <p class="mt-5">Avatar was added as a feature to show to other administrators, but after some
+                        reconsiderations,
+                        this was a stupid idea, hence the feature will be dismissed in further updates, for now, all
+                        avatars will be private</p>
+                </div>
+
+                <div>
+                    <form action="" method="POST">
+                        <fieldset class="fieldset">
+                            <legend class="fieldset-legend">Username</legend>
+                            <input value="{{ user.name }}" data-theme="dark" type="text" class="input" placeholder="" />
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <legend class="fieldset-legend">Display name</legend>
+                            <input value="{{ user.display_name }}" data-theme="dark" type="text" class="input"
+                                placeholder="" />
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <legend class="fieldset-legend">Bitcoin address</legend>
+                            <input value="{{ user.btcaddr }}" data-theme="dark" type="text" class="input"
+                                placeholder="" />
+                        </fieldset>
+
+                        <button class="mt-2 btn btn-warning">Save</button>
+                    </form>
+
+                    <form action="" method="POST" class="mt-5">
+                        <fieldset class="fieldset">
+                            <legend class="fieldset-legend">New Password</legend>
+                            <input data-theme="dark" type="password" class="input" placeholder="" />
+                        </fieldset>
+                        <fieldset class="fieldset">
+                            <legend class="fieldset-legend">Confirm Password</legend>
+                            <input data-theme="dark" type="password" class="input" placeholder="" />
+                        </fieldset>
+
+                        <button class="mt-2 btn btn-warning" type="submit">Update</button>
+                    </form>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="banner">
+
+            <a href="/">
+                <img src="{{ url_for('static', filename='imgs/bee.png') }}" />
+                <h1>Honeymarket</h1>
+            </a>
+
+            <a href="/logout" class="btn btn-outline btn-error">
+                Logout
+            </a>
+
+        </div>
+
+
+    </div>
+    <div id="content">
+</body>
+
+</html>

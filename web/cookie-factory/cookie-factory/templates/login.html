@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Login</h1>
+
+<form id="login-form">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<script>
+
+document.getElementById('login-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const formData = new URLSearchParams(new FormData(this));
+  const response = await fetch('/login', {
+    method: 'POST',
+    body: formData
+  });
+
+  const result = await response.json();
+  const alertArea = document.getElementById('alert-area');
+  alertArea.innerHTML = ''; 
+
+  if (result.success) {
+    window.location.href = '/dashboard'; 
+  } else {
+    alertArea.innerHTML = `
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        ${result.message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`;
+  }
+});
+</script>
+{% endblock %}

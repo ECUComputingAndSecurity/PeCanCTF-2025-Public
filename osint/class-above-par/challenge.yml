@@ -1,0 +1,24 @@
+name: Class Above Par
+author: Starnsworth
+category: osint
+description: |
+  Every day, Jamie walks the tree-lined streets of Melbourne's southern suburbs to reach their secondary school — a place where the morning roll call is often interrupted by the distant thunder of aircraft overhead.
+
+  One afternoon, while mapping out local landmarks for a class project, Jamie discovered something curious: their school might just be the closest secondary school to a major airport. Even more peculiar, it's also just a stone's throw from sprawling golf greens, where quiet swings contrast the rush of jet engines.
+
+  Can you uncover the school that Jamie calls home? Flag format: `pecan{my_high_school}`
+attribution: Starnsworth
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{parkdale_secondary_college}
+
+version: "0.1"

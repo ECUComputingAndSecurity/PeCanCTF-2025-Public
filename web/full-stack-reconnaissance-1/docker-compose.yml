@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ../full-stack-reconnaissance-2/backend
+    container_name: flask_backend
+    ports:
+      - "7123:7123"
+    volumes:
+      - ../full-stack-reconnaissance-2/backend:/app
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_BACKEND_URL: http://localhost:7123
+    container_name: react_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - CHOKIDAR_USEPOLLING=true

@@ -1,0 +1,75 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #667db6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes anime {
+    from {
+        transform: translateY(-2em);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.layer {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.login input::placeholder {
+    color: rgb(80, 80, 80);
+}
+
+.login input:focus {
+    color: white;
+    background-color: transparent;
+}
+
+.login input {
+    color: white;
+    background-color: transparent;
+}
+
+.login button {
+    float: right;
+}
+
+.login p {
+    color: rgba(255, 255, 255, 0.205);
+}
+
+.login img {
+    filter: invert(1);
+    height: 1em;
+    width: 1em;
+    margin: auto;
+    transform: scaleX(-1);
+}
+
+.login {
+    padding: 2em;
+    background-color: #212121;
+    margin: auto;
+    box-shadow: 0 0 4px #0000009e;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 25em;
+    bottom: 0;
+    animation: anime 0.5s forwards;
+}

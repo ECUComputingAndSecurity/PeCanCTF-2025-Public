@@ -1,0 +1,26 @@
+name: Multi-layer
+author: Karina (ECU)
+category: crypto
+description: |
+  This thing has layers.
+
+  ```
+  ZnJpcmEgbyBmY25wciBmcmlyYSBhdmFyIGZjbnByIGZ2ayBzIGZjbnByIGZyaXJhIHN2aXIgZmNucHIgZ2piIG1yZWIgZmNucHIgZnZrIGZyaXJhIGZjbnByIGZ2ayBzIGZjbnByIGZyaXJhIHNiaGUgZmNucHIgZ2piIG1yZWIgZmNucHIgZnJpcmEgc2JoZSBmY25wciBmdmsgcnZ0dWcgZmNucHIgZnZrIGF2YXIgZmNucHIgZnJpcmEgZ3VlcnIgZmNucHIgZnJpcmEgcQ==
+  ```
+
+  Remember that the flag format is `pecan{flag_goes_here}`
+attribution: Karina (ECU)
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{you got this}
+
+version: '0.1'

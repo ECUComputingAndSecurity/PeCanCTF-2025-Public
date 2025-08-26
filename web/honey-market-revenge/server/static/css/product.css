@@ -1,0 +1,191 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #1d232a;
+    overflow: hidden;
+
+}
+
+* {
+    color: white;
+}
+
+#frame {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    flex-direction: column;
+}
+
+#products>div {
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.301);
+}
+
+.prod>label {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card:hover {
+    outline: 2px solid #feb167;
+}
+
+.prod b {
+    color: #feb167;
+}
+
+#products>div:hover {
+    transform: translateY(-0.7em);
+}
+
+
+label.selected {
+    opacity: 1 !important;
+    color: #ffa24c;
+    font-weight: bold;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
+    overflow: auto;
+    gap: 1.5em;
+    padding: 2em;
+}
+
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-1em);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.prod img {
+    height: 3em;
+    width: 3em;
+}
+
+.prod>div:first-child {
+    display: flex;
+    gap: 1em;
+}
+
+#products:not(.loaded)>div {
+    display: none;
+}
+
+#products.loaded>section {
+    display: none;
+}
+
+
+#notfound svg {
+    height: 2em;
+    width: 2em;
+    color: white;
+    fill: white;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+#notfound {
+    opacity: 0.5;
+    margin: auto;
+}
+
+#content {
+    background-color: rgba(59, 54, 54, 0.126);
+    padding: 2em;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    flex: 1;
+    gap: 1.5em;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#searchbar {
+    position: absolute;
+    right: 3em;
+    top: 2.5em;
+    animation: dropdown 0.3s forwards;
+
+}
+
+#searchbar input::placeholder {
+    opacity: 0.7;
+}
+
+#searched {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+#content>h1 {
+    font-size: 2em;
+    padding-left: 1em;
+    animation: dropdown 0.3s forwards;
+}
+
+#banner>label {
+    margin: auto;
+    opacity: 0.5;
+    margin-right: 0;
+}
+
+#banner {
+    border-top: 1px solid rgba(92, 92, 92, 0.324);
+    padding: 1.5em;
+    display: flex;
+    animation: dropup 0.3s forwards;
+}
+
+#banner>a {
+    font-size: 1.1em;
+    margin: auto;
+    margin-right: 0;
+}
+
+#banner>a>h1 {
+    font-family: font1;
+    margin: auto;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+}
+
+#banner>a:hover h1 {
+    color: #feb167
+}
+
+
+#banner>a:hover img {
+    transform: rotate(25deg);
+}
+
+#banner>a * {
+    transition: all 0.3s ease;
+}
+
+#banner>a {
+    cursor: pointer;
+    margin: auto;
+    margin-left: 0;
+    display: flex;
+}
+
+#banner img {
+    height: 2.2em;
+    width: 2.2em;
+}

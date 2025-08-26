@@ -1,0 +1,25 @@
+name: Layer Cake
+author: Kvlido
+category: steg
+description: |
+  Not all cakes are lies. This one has layers!
+  The flag format is `pecan{crackedwords}`
+attribution: Kvlido
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{Danielisprettycool}
+
+files:
+- Colour Palette.png
+- Julius Caesar.jpg
+
+version: '0.1'

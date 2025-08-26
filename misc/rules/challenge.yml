@@ -1,0 +1,20 @@
+name: Rules
+author: PECAN+ CTF 2025
+category: misc
+description: |
+  Follow the rules for this CTF!
+attribution: PECAN+ CTF 2025
+type: dynamic
+
+extra:
+  initial: 250
+  decay: 2
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{we_underst00d_the_assignment}
+
+version: '0.1'

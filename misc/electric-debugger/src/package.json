@@ -1,0 +1,27 @@
+{
+  "name": "ElectricDB",
+  "version": "1.0.0",
+  "description": "Top-tier cutting-edge solution for debugging code.",
+  "repository": "ECUComputingAndSecurity/PeCanCTF-2025",
+  "license": "ISC",
+  "author": "ScriptKidding",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12",
+    "electron-vite": "^3.1.0"
+  },
+  "build" : {
+    "appId": "com.ElectricDB",
+    "copyright" : "Copyright © 2025 ScriptKidding.Inc",
+    "productName" : "Electric Debugger",
+    "icon" : "./pages/imgs/icon.png"
+  }
+}

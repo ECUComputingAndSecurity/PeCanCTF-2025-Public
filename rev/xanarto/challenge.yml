@@ -1,0 +1,23 @@
+name: Xanarto
+author: Raahguu
+category: rev
+description: |
+  I found this guy on LinkedIn who claimed to have created an uncrackable algorithm. Prove him wrong. I have attached the post in an image.
+attribution: Raahguu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{The_XanartoThe_One_And_Only_Xanarto!}
+
+files:
+- XanartoPost.png
+
+version: '0.1'

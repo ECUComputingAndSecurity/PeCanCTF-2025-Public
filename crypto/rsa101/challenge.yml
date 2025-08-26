@@ -1,0 +1,27 @@
+name: RSA101
+author: Starnsworth
+category: crypto
+description: |
+  We've received a message we believe is encrypted with RSA, but the primes in the public key could be weak.
+  Find the factors and decipher the message.
+
+  ```
+  n = 914224879713534891752745051672415462330144197757968187295993
+  e = 17
+  ciphertext = 152293808340616594229073242267037730353433147091103189533666
+  ```
+attribution: Starnsworth
+type: dynamic
+
+extra:
+  initial: 250
+  decay: 2
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: PECAN{l4rg3r_pr1m35}
+
+version: '0.1'

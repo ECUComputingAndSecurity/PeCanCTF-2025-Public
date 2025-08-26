@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - {{prod.title}}'s breaches</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/bee.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/item.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+    integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.2/sass.min.js"
+    integrity="sha512-mA5b7w9mZvGLWgjIqp9KhWNzkkZ/H3gC4Ua6GOn9m/xl1UF4ghH8GsriKvAYxLsxoKvn6NdebW7kZ6iGB3CGSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body ng-app="honeyApp" ng-controller="honeyController">
+
+    <div id="frame">
+
+        <div id="banner">
+            <i onclick="history.back()" alt="Go back" class="fa-solid fa-chevron-left"></i>
+            <a href="/">
+                <img src="{{ url_for('static', filename='imgs/bee.png') }}" />
+                <h1> Honeymarket</h1>
+            </a>
+            <label>🏆</label>
+        </div>
+
+
+        <div id="box">
+            <div id="context">
+                <img src="{{ url_for('static', filename='imgs/' ~ prod.picture) }}" />
+                <div class="boxleak">
+                    <h2 id="leaktitle">{{prod.title}}</h2>
+                    <h3>Description:</h3>
+                    <p>{{prod.brief}}</p><br />
+                    <h3>Leak details:</h3>
+                    <textarea readonly>{{prod.content}}</textarea><br />
+                    <label class="price">Price:</label><label>{{prod.price}} ₿TC</label><br />
+                    <button ng-click="contact()" data-theme="dark" class="mt-5 btn btn-warning">CONTACT NOW</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal for opening and closing -->
+    <dialog data-theme="dark" id="contactform" class="modal">
+        <div class="modal-box">
+            <form method="dialog">
+                <button ng-click="close_modal()"
+                    class="btn btn-xl btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h1 class="text-2xl font-bold">CONTACT US</h1>
+            <p class="py-4" style="opacity: 0.5;">Find this breach juicy ? Contact the owner now to get the succulent
+                data with a potential discount!</p>
+
+            <form action="/contact/submit" method="POST">
+                <input type="text" name="name" class="input w-100 mb-3" placeholder="Name" />
+
+                <fieldset class="fieldset w-100">
+                    <legend class="fieldset-legend">Product URL</legend>
+                    <input name="url" type="text" class="input w-100 mb-3" placeholder="http://honeymarket.onion/BREACH" />
+                </fieldset>
+
+                <fieldset class="fieldset mb-4">
+                    <legend class="fieldset-legend">Message (Optional)</legend>
+                    <textarea class="w-100 textarea h-24"
+                        name="message"
+                        placeholder="Little message to the administrator..."></textarea>
+                </fieldset>
+
+                <button class="btn btn-error">Send</button>
+            </form>
+        </div>
+
+</body>
+
+<script>
+    angular.module('honeyApp', []).controller('honeyController', function ($scope, $location, $sce) {
+        $scope.contact = () => {
+            document.getElementById("contactform").showModal();
+        }
+        $scope.close_modal = () => {
+            document.getElementById("contactform").close();
+        }
+    });
+</script>
+
+</html>

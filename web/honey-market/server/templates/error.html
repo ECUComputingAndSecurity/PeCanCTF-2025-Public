@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #1d232a;
+            overflow: hidden;
+
+        }
+
+        body {
+            display: flex;
+        }
+
+        body>div {
+            margin-top: 7em;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            margin: auto;
+        }
+
+        img {
+            margin: auto;
+            height: 6em;
+            width: 6em;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        * {
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+        }
+
+        p {
+            text-align: center;
+            max-width: 30em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="{{ url_for('static', filename='imgs/bug.png') }}" />
+        <h1>{{code}}</h1>
+        <p>{{err}}</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/activation.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+</head>
+<body>
+
+
+    <div id="main">
+
+        <div>
+            <img draggable="false" src="imgs/image.png" />
+            <h1>Activate license</h1>
+        </div>
+
+        <p>Since this product has too much aura, you have to buy it to use it. Now activate or leave it!</p>
+        <input id="key" placeholder="Key: XXXX-XXXX-XXXX-XXXX" />
+        <button onclick="validate()">Activate</button>
+
+    </div>
+
+    <script>
+
+        function validate(){
+
+            const k = document.querySelector("input[id='key']").value.trim();
+
+            window.electric_api.getKey().then(productkey => {
+
+                if(k!==productkey){
+                    window.electric_api.error('Invalid product key', 'That was not quite right. Please try again with a valid key.');
+                }else
+                    window.electric_api.login(k);
+
+            });
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /main.pyi
+Disallow: /user
+Disallow: /secret/hints.txt

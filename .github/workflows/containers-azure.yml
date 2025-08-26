@@ -1,0 +1,92 @@
+name: Deploy containers to Azure
+
+on:
+  push:
+    branches:
+      - main
+    # TODO match on regex instead
+    paths:
+      - pwn/**
+      - web/**
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - uses: actions/setup-python@v5.4.0
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - name: Setup ctfcli
+        run: |
+          pip install -r requirements.txt
+          ctf plugins install https://github.com/pl4nty/ctfcli-deploy-azure.git
+
+          mkdir .ctf
+          cat <<EOF > .ctf/config
+          [config]
+          url = https://${{ vars.CTFD_DOMAIN }}
+          access_token = ${{ secrets.CTFD_TOKEN }}
+
+          [cookies]
+          site_password = ${{ secrets.CTFD_SITE_PASSWORD }}
+
+          [challenges]
+          EOF
+
+          shopt -s extglob
+          for chal in ?(pwn|web)/*/; do
+            echo "$chal = $chal" >> .ctf/config
+          done
+
+      # azure-identity doesn't support GitHub WIF
+      - uses: azure/login@v2.2.0
+        with:
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          allow-no-subscriptions: true
+
+      - name: Setup Azure Container Registry
+        run: az acr login --name ${{ vars.REGISTRY }}
+
+      - uses: docker/setup-buildx-action@v3.10.0
+      - name: Get auth params for buildx cache
+        uses: crazy-max/ghaction-github-runtime@v3.0.0
+      # TODO raise issue, throws error even if target challenge isn't deployable. ignore all errors for now
+      - name: Deploy containers
+        run: |
+          docker() {
+            if [ "$1" = "build" ]; then
+              command docker buildx build --cache-from type=gha --cache-to type=gha,mode=max "${@:2}"
+            else
+              command docker "$@"
+            fi
+          }
+          ctf challenge deploy --skip-login --host "azure://management.azure.com${{ vars.AZURE_CONTAINER_ENV }}?registry=${{ vars.REGISTRY }}&identity=${{ vars.AZURE_CONTAINER_IDENTITY }}&suffix=${{ vars.AZURE_CONTAINER_SUFFIX }}" || true
+
+      - name: Setup GitHub container registry
+        uses: docker/login-action@v3.4.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Push container images to GitHub
+        run: |-
+          images=$(docker images $REGISTRY/*:latest --format "{{.Repository}}")
+          for image in $images; do
+            lowercase=${GITHUB_REPOSITORY_OWNER,,}
+            newtag=${image//$REGISTRY/ghcr\.io\/$lowercase}:latest
+            docker tag $image:latest $newtag
+            docker push $newtag
+          done
+        env:
+          REGISTRY: ${{ vars.REGISTRY }}

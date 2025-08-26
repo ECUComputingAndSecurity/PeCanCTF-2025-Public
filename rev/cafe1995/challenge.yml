@@ -1,0 +1,24 @@
+name: cafe1995
+author: Lachlan Adamson
+category: rev
+description: |
+  You've picked up the pieces of a program from an unsupervised developer who just got fired.
+  Find the password and get the company back on track... or they'll fire you too.
+attribution: Lachlan Adamson
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: "pecan{5um4tra-1nd0n3s1a}"
+
+files:
+- "cafe1995.tar.gz"
+
+version: '0.1'

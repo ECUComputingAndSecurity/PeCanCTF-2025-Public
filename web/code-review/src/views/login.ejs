@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/login.css" />
+    <link rel="stylesheet" href="/static/fonts/fonts.css" />
+    <link rel="icon" type="image/x-icon" href="/static/imgs/red-flag.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous" />
+    <title>CodeCTF - Dashboard</title>
+    <!-- Don't need highlight.js for this opne
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+</head>
+
+<body>
+
+    <!-- <div class="test">
+        <section>
+            <h1 class="text-white"><img src="/static/imgs/flag.png" /> Dashboard</h1>
+            <input name="user">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit" class="w-100 mt-5 btn btn-primary">Submit</button>
+        </section>
+    </div> -->
+
+    <div class="layer">
+
+        <!-- Consider making a POST to another endpoint in the future -->
+        <form class="login" method="POST" action="">
+
+            <!-- Might wanna change the style later on for the heading -->
+            <h1 class="text-white"><img src="/static/imgs/flag.png" /> Dashboard</h1>
+            <!-- Different image maybe ? This sucks -->
+            <p>Only administrators can have access for challenge management purposes.</p>
+
+            <!-- Username form -->
+            <div class="form-group">
+                <label class="text-white" for="exampleInputEmail1">Username</label>
+                <input class="mt-2 form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Username" name="username">
+            </div>
+
+            <!-- Password form -->
+            <div class="mt-3 form-group">
+                <label for="exampleInputPassword1" class="text-white mt-3">Password</label>
+                <input name="password" type="password" class="mt-2 form-control" id="exampleInputPassword1"
+                    placeholder="Password">
+            </div>
+
+            <!-- Show error messages here -->
+            <label class="text-danger mt-3"></label>
+
+            <button type="submit" class="w-100 mt-5 btn btn-primary">Login</button>
+        </form>
+    </div>
+</body>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    // CHecking if there is any "err" parameter in the URL, if yes then show it
+    // because the user might be doing something wrong
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.has('err') && params.get("err") === "INVALID_CRED")
+        document.querySelector(".login > label.text-danger").innerText = "Invalid credentials.";
+    else if (params.has('err') && params.get("err") !== "INVALID_CRED")
+        document.querySelector(".login > label.text-danger").innerText = "Unknown errors.";
+
+</script>
+
+<!-- 
+Redundant, get rid of these once deployed to production, some are not needed and some were just added
+for the very purpose of debugging while being in the development phase.
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+<script defer src="/static/js/temp_10.4.2025/testing.js"></script>
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script defer src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+     -->
+
+</html>
+
+<!-- 
+
+Merge conflict here, i have already told Jason not to touch this file and now we have this merged section,
+sorry i am too lazy, just gonna comment it out.
+
+                <label class="text-white mt-3">Passphrase</label>
+                <input name="password" placeholder="Password">
+            </div>
+            <section type="submit" class="w-100 mt-5 btn btn-primary">Login</section>
+        </form>
+    </div>
+</body>
+</html> -->

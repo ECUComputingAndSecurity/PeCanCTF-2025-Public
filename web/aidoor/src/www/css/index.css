@@ -1,0 +1,81 @@
+img {
+    filter: invert(1);
+}
+
+html,
+body {
+    background-color: rgb(26, 32, 66);
+}
+
+.navbar {
+    background-color: rgb(19, 22, 44);
+}
+
+.logout {
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+}
+
+.logout:hover {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 1em !important;
+}
+
+#sect {
+    text-align: center;
+}
+
+.grid.main {
+    height: 100% !important;
+}
+
+
+#sect pre {
+    background-color: transparent;
+}
+
+.main div.cell.card:hover {
+    transform: translateY(-0.5em);
+    outline: 2px solid rgb(104, 77, 220);
+}
+
+.subauthor {
+    padding: 1em;
+    padding-top: 1em;
+    padding-top: 0;
+}
+
+.main div.cell.card {
+    transition: all 0.3s ease-in-out;
+    height: 13em;
+    max-height: 13em;
+    cursor: pointer;
+    background-color: #242b51;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.19);
+}
+
+.fff {
+    max-width: 50em;
+    text-align: center;
+    margin: auto;
+}
+
+div.grid.main.is-col-min-14 {
+    height: 100% !important;
+}
+
+.content time {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+
+.main {
+    height: 100%;
+    gap: 1.5em;
+    height: 27em;
+    padding: 2em;
+}

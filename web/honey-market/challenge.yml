@@ -1,0 +1,33 @@
+name: Honey market
+author: ScriptKidding
+category: web
+description: |
+  Just yesterday, an FBI agent uncovered a newly launched darknet forum linked to a notorious cybercrime group,
+  infamous for hacking and selling classified data from critical organizations. The U.S. government and ACSC have
+  brought you in to uncover who's behind it, and thanks to a slip-up by the site's admin, we managed to get a peek
+  at their source code. But beware: these suckers know they're being hunted, so heads up for traps!
+
+  Now, time is ticking! Find the flaw. Bring them down.
+attribution: ScriptKidding
+type: dynamic
+
+image: server
+protocol: https
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{h@ck3d_th3_h@ck3r$_!!!}
+
+next: Honey market revenge
+
+files:
+  - source.zip
+
+version: "0.1"

@@ -1,0 +1,19 @@
+{
+    "buckets" : [
+        {
+            "id" : "ff76b8cc-61ce-4133-be8d-6889c194e14b",
+            "name" : "CTF details",
+            "description" : "Empty"
+        },
+        {
+            "id" : "a26f0c28-060c-4571-be54-7caf6b5c0563",
+            "name" : "Secret Documents",
+            "description" : "Some secret plans of the administrators."
+        }
+    ],
+
+    "mapping" : {
+        "ff76b8cc-61ce-4133-be8d-6889c194e14b" : "ctfdetails.zip",
+        "a26f0c28-060c-4571-be54-7caf6b5c0563" : "secretsDocuments.zip"
+    }
+}

@@ -1,0 +1,23 @@
+name: Nothing to See Here
+author: Ashley Lamont
+category: steg
+description: |
+  Here's a little drawing I made. There's nothing to see in it though, as you can see.
+attribution: Ashley Lamont
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{th3_sw0rd_0f_k1ng_4rthur}
+
+files:
+- image.png
+
+version: '0.1'

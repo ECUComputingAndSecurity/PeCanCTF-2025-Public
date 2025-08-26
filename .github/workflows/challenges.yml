@@ -1,0 +1,50 @@
+name: Deploy challenges
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '*/**'
+      - '!.*/**'
+      - '!pages/**'
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      # pending https://github.com/nschloe/action-cached-lfs-checkout/pull/34
+      - name: Checkout
+        uses: connorjclark/action-cached-lfs-checkout@main-1
+
+      - uses: actions/setup-python@v5.4.0
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - name: Setup ctfcli
+        run: |
+          pip install -r requirements.txt
+
+          mkdir .ctf
+          cat <<EOF > .ctf/config
+          [config]
+          url = https://${{ vars.CTFD_DOMAIN }}
+          access_token = ${{ secrets.CTFD_TOKEN }}
+
+          [cookies]
+          site_password = ${{ secrets.CTFD_SITE_PASSWORD }}
+
+          [challenges]
+          EOF
+
+          shopt -s globstar
+          for chal in **/challenge.yml; do
+            echo "$chal = $chal" >> .ctf/config
+          done
+
+      - name: Deploy challenges
+        run: ctf challenge install --force

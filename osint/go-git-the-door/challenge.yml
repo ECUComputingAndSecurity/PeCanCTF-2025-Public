@@ -1,0 +1,29 @@
+name: Go git the door
+author: ScriptKidding
+category: osint
+description: |
+  An infamous cybercriminal who successfully carried out many large-scale ransomware operations in the past is working on a new one. Luckily for us, he accidentally made his GitHub repository public. Can you examine to see if he accidentally exposes any secret information?
+  Flag format: `pecan{secret1_secret2}`
+attribution: ScriptKidding
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+connection_info: https://github.com/PHP-Abuse-Me/10th-operation-backdoor
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{119.24.231.88_249.91.101.163}
+  - type: static
+    data: case_insensitive
+    content: pecan{249.91.101.163_119.24.231.88}
+
+hints:
+  - A little hint, our previous takedowns sometimes involve them showing their public IP addresses during the development process
+
+version: "0.1"

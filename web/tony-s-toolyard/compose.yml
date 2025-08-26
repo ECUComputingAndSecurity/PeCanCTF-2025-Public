@@ -1,0 +1,5 @@
+services:
+  app:
+   build: ./TonysToolyard
+   ports:
+     - 80:80

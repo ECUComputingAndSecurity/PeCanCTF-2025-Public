@@ -1,0 +1,22 @@
+name: Happy Birthday Corn Man!
+author: Monique Cornall
+category: osint
+description: |
+  I have been tracking the Corn Man for a while now, but have come up against a roadblock. I have found his email recently online to be: <cornman25944@gmail.com>. He seems to have a big presence online. Could you potentially find his birthday and aid in this investigation?
+attribution: Monique Cornall
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{th3_st4rt_0f_3v3ryth1ng}
+
+next: Online Presence
+
+version: '0.1'

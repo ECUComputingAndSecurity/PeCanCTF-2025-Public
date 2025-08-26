@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  background-color: #0a0a0a;
+}
+
+.bod {
+  background-color: transparent;
+  padding: 1.5em;
+}
+
+.bod h2 {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.534);
+}
+
+.submitbtn label {
+  font-size: 1.5em;
+  user-select: none;
+  cursor: pointer;
+  margin: auto;
+}
+
+.submitbtn:active {
+  transform: scale(0.95);
+}
+
+#flag {
+  height: 1.5em;
+}
+
+.cardbox {
+  margin-top: 2em;
+  padding-bottom: 2em;
+  gap: 1em;
+}
+
+.card.important:hover {
+  filter: invert(1);
+}
+
+.card.important {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: #151515;
+  width: 32% !important;
+  box-sizing: border-box;
+  outline: 0.5px solid rgb(48, 48, 48);
+}
+
+.spinner-border.hide {
+  display: none !important;
+}
+
+.spinner-border {
+  height: 1em !important;
+  width: 1em !important;
+  border-width: 2px !important;
+}
+
+.c-modal.show {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.c-modal {
+
+  /* The following few attributes will disappear once the show class is added */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-2em);
+  /* ---- */
+
+  transition: all 0.25s ease-in-out;
+  position: fixed;
+  z-index: 3;
+  background-color: rgba(28, 28, 28, 0.803);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  top: 0;
+}
+
+.dragdrop {
+  border: 1px dashed rgba(255, 255, 255, 0.31);
+  height: 10em;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#loaded {
+  display: none;
+}
+
+.dropped #loaded {
+  display: block;
+}
+
+.dropped>img:nth-child(2) {
+  display: none;
+}
+
+.dropped>label {
+  font-weight: bold;
+}
+
+.dragdrop * {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.dragdrop:hover *,
+.dragdrop-hovered *,
+.dropped * {
+  opacity: 1 !important;
+}
+
+.dragdrop:hover label,
+.dragdrop-hovered label,
+.dropped label {
+  color: #21b1ff !important;
+}
+
+.dragdrop:hover,
+.dragdrop-hovered,
+.dropped {
+  border: 1px solid rgb(39, 39, 39);
+  background-color: rgb(39, 39, 39);
+}
+
+.dragdrop>label {
+  opacity: 0.2;
+  color: white;
+  font-size: 0.7em;
+  font-family: FontMedium;
+  margin: auto;
+  margin-top: 0;
+}
+
+.dragdrop>img {
+  opacity: 0.2;
+  height: 2em;
+  filter: invert(1);
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+
+.category {
+  color: rgb(114, 114, 114);
+  font-size: 14px;
+}
+
+.box .form-check label {
+  color: white;
+}
+
+.box>div input {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.088);
+  transition: all 0.3s ease-in-out;
+}
+
+.box>div input:focus {
+  color: white;
+  border: 2px solid #21b1ff !important;
+}
+
+.box>div input::placeholder {
+  color: rgba(255, 255, 255, 0.282);
+}
+
+.box h1 {
+  color: #21b1ff;
+  font-size: 1.5em;
+  font-family: FontMedium;
+}
+
+.box p {
+  font-family: FontRegular;
+  color: rgba(243, 243, 243, 0.467);
+  font-size: 12px;
+}
+
+
+
+.box {
+  background-color: rgb(32, 32, 32);
+  padding: 1.5em;
+  /* border-radius: 5px; */
+  border: 1px solid rgba(160, 160, 160, 0.212);
+  margin: auto;
+  max-width: 30em;
+
+}
+
+
+.submitbtn>button {
+  position: absolute;
+}
+
+.submitbtn {
+  position: relative;
+  bottom: 1em;
+  right: 1em;
+  transition: all 0.2s ease-in-out;
+  border-radius: 15px;
+  width: 3em;
+  height: 3em;
+  color: white;
+  display: flex;
+  position: fixed;
+  background: #667db6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #667db6,
+      #0082c8,
+      #0082c8,
+      #667db6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #667db6,
+      #0082c8,
+      #0082c8,
+      #667db6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  cursor: pointer;
+}
+
+.main {
+  background-color: #0a0a0a;
+  display: flex;
+}
+
+.time>label {
+  margin: auto;
+  margin-right: 0;
+  font-family: FontMedium;
+  font-size: 1.1em;
+  color: white;
+}
+
+.time>div {
+  font-family: FontBold;
+  margin: auto;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+@keyframes slowly_appear {
+  from {
+    opacity: 0;
+    height: 0px;
+  }
+
+  to {
+    height: 3em;
+    opacity: 1;
+  }
+}
+
+.time {
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  display: flex;
+  background: #ff416c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #ff4b2b,
+      #ff416c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #ff4b2b,
+      #ff416c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* height: 3em; */
+  animation: slowly_appear 2s forwards;
+}
+
+.head p {
+  font-family: FontRegular;
+  width: 50em;
+  text-align: center;
+  font-size: 12px;
+}
+
+.head h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.bod h2 img {
+  height: 1.2em;
+}
+
+.head {
+  z-index: 1;
+  box-shadow: 0px 0px 5px #00000085;
+  padding: 2em;
+  background: #667db6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #667db6,
+      #0082c8,
+      #0082c8,
+      #667db6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #667db6,
+      #0082c8,
+      #0082c8,
+      #667db6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.toast-body.text-bg-primary a {
+  color: wheat !important;
+}
+
+
+.toast-header.text-bg-primary img,
+.toast-header.text-bg-danger img,
+button {
+  filter: invert(1) !important;
+}

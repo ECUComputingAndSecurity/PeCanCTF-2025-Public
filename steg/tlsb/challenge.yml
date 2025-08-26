@@ -1,0 +1,23 @@
+name: TLSB
+author: Raahguu
+category: steg
+description: |
+  You might have heard of Least Significant Bit (LSB) Steganography, but have you ever heard of Third Least Significant Bit (TLSB) Steganography? (Hopefully not considering I made it up for this challenge). (HINT: I stored the secret in image byte order)
+attribution: Raahguu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{Th4t5_n0t_L345t_S1gn1f1c4nt_b1t_5t3g}
+
+files:
+- TLSB
+
+version: '0.1'

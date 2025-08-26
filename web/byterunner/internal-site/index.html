@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteRunner Express - Intranet Home</title>
+
+    <!-- Re-use public theme -->
+    <link rel="stylesheet" href="../common/main.css" />
+
+    <!-- Intranet-specific tweaks -->
+    <style>
+      :root {
+        /* slight palette variation for internal pages */
+        --intra-bg: #f0f4ff;
+      }
+
+      body {
+        background: var(--intra-bg);
+      }
+
+      /* grid of quick links */
+      .quick-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .quick-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem 0.75rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--ink);
+        transition: box-shadow 0.15s;
+      }
+
+      .quick-links a:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      /* announcement list */
+      .announcements {
+        margin-top: 2.5rem;
+        text-align: left;
+      }
+
+      .announcements h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .announcements li {
+        margin-bottom: 0.75rem;
+        list-style: disc inside;
+      }
+
+      /* service health pills */
+      .health-board {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        margin-top: 2.5rem;
+        justify-content: center;
+      }
+
+      .pill {
+        padding: 0.4rem 0.85rem;
+        border-radius: 9999px;
+        font-size: 0.825rem;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .pill.ok {
+        background: #4caf50;
+      }
+      .pill.warn {
+        background: #ffc107;
+      }
+      .pill.down {
+        background: #f44336;
+      }
+
+      /* footer adjustments */
+      footer {
+        margin-top: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Intranet navbar -->
+    <header class="navbar">
+      <div class="brand">🔒 ByteRunner Intranet</div>
+      <nav>
+        <a href="#">Tickets</a>
+        <a href="#">Docs</a>
+        <a href="#">Status</a>
+        <a href="#">Logout</a>
+      </nav>
+    </header>
+
+    <!-- Main container -->
+    <main class="hero">
+      <h1>Welcome, <span id="user-name">Employee</span></h1>
+      <p class="tagline">
+        Everything you need to keep parcels moving (and servers humming).
+      </p>
+
+      <!-- Quick links grid -->
+      <div class="quick-links">
+        <a href="#">🎫 Ticket Dashboard</a>
+        <a href="#">📈 Delivery Analytics</a>
+        <a href="#">🚒 Incident Manager</a>
+        <a href="#">📚 Engineering Docs</a>
+        <a href="#">⚙️ Feature Flags</a>
+        <a href="#">💬 Slack Workspace</a>
+      </div>
+
+      <!-- Announcements -->
+      <section class="announcements">
+        <h2>📢 Latest Announcements</h2>
+        <ul>
+          <li>
+            [2025-06-17] Remember to rotate API keys before next Tuesday's
+            compliance audit.
+          </li>
+          <li>
+            [2025-06-12] New staging cluster now live at
+            <code>staging.byte-runner.io</code>.
+          </li>
+          <li>
+            [2025-06-05] Logistics AI beta rolled out to 5% of production
+            traffic.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Service health pills -->
+      <section class="health-board">
+        <span class="pill ok">Public API: OK</span>
+        <span class="pill ok">Internal API: OK</span>
+        <span class="pill warn">Image Service: Degraded</span>
+        <span class="pill down">Analytics DB: Outage</span>
+      </section>
+
+      <!-- Flag -->
+      <section class="flag" style="margin-top: 2rem">
+        <h2>🏁 This week's company security phrase</h2>
+        <p>
+          <strong><code>pecan{signed_sealed_spoofed}</code></strong>
+        </p>
+
+        <p>
+          Use this phrase to verify your identity when accessing sensitive
+          systems.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2025 ByteRunner Express - Intranet v1.0</small>
+    </footer>
+  </body>
+</html>

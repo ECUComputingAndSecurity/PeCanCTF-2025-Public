@@ -1,0 +1,24 @@
+name: Ping
+author: Viet Huy Nguyen
+category: forensics
+description: |
+  Attackers are getting clever these days, they're finding all sorts of ways to exfiltrate data!
+  What did they steal this time?
+attribution: Viet Huy Nguyen
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{d4t4_3xf1ltr4t10n_thr0gh_p1ng_93485}
+
+files:
+- capture.pcapng
+
+version: '0.1'

@@ -1,0 +1,34 @@
+name: fridge
+author: justjayiguess
+category: pwn
+description: |
+  We've had a data breach! Our forensics team worked out that there was some weird traffic coming from our new smart refrigerator, and they seem to have found an old debugging service that's still running...
+
+  It's up to you now to work out how they got access to our fridge!
+attribution: justjayiguess
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: .
+protocol: tcp
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{4_ch1ll1ng_d1sc0v3ry!}
+
+files:
+  - vuln
+  - vuln.c
+  - build.sh
+  - Dockerfile
+  - config.txt
+  - food_dir/milk
+  - food_dir/bacon
+
+version: "0.1"

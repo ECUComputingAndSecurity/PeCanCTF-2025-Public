@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey Market - Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/bee.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/core.css') }}">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+    integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.2/sass.min.js"
+    integrity="sha512-mA5b7w9mZvGLWgjIqp9KhWNzkkZ/H3gC4Ua6GOn9m/xl1UF4ghH8GsriKvAYxLsxoKvn6NdebW7kZ6iGB3CGSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body ng-app="honeyApp" ng-controller="honeyController">
+
+    <div id="frame">
+
+        <div id="banner">
+            <div>
+                <div>
+                    <img src="{{ url_for('static', filename='imgs/bee.png') }}" />
+                    <h1>Honeymarket</h1>
+                </div>
+
+                <p>
+                    <b>Welcome to Honey Market ! AGAIN !!!</b><br /><br />
+
+                    Yes, we get it — we’re still ashamed about the last breach, where trust was lost. But fear no more, 
+                    because it’s REVENGE TIME! Version 2.0 is here, packed with security updates so tight, no law enforcement 
+                    can pwn us again. Rest assured, your purchases are safe, and you can count on us to deliver your favorite 
+                    breaches.<br /><br />
+
+                    The rest of the rule is simple: We only deal in DMs, crypto only, no games, no
+                    middlemen.
+                </p>
+
+                <a href="/products" class="mt-5 btn-warning btn btn-outline text-black border-[#e17d00]">
+                    Browse trophies </a>
+            </div>
+            <section>
+
+            </section>
+
+        </div>
+        <div id="content">
+
+            <div>
+                <h1 id="hallofame">🏆 Hall of fame 🏆</h1>
+            </div>
+            <div id="trophies">
+                {% for item in products %}
+                <div style="animation-delay: {{loop.index0 * 100}}ms;" data-theme="dracula"
+                    class="card w-96 bg-base-100 card-md shadow-sm">
+                    <div class="card-body">
+                        <div>
+                            <img src="{{ url_for('static', filename='imgs/' ~ item.picture) }}" />
+                            <h2 class="card-title">{{ item.title }}</h2>
+                        </div>
+
+                        <p>{{item.brief}}
+                        </p>
+                        <div class="justify-end card-actions">
+                            <a href="{{ url_for('item_page', productID=item.id) }}"
+                                class="mt-3 btn btn-error btn-outline">BUY NOW
+                                ₿</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <!-- <div class="pending">
+                <div data-theme="dark">
+                    <div data-theme="dark" class="flex w-52 flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="skeleton h-16 w-16 shrink-0 rounded-full"></div>
+                            <div class="flex flex-col gap-4">
+                                <div class="skeleton h-4 w-20"></div>
+                                <div class="skeleton h-4 w-28"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton h-32 w-full"></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+    </div>
+    <div id="content">
+</body>
+
+<script>
+
+
+
+</script>
+
+</html>

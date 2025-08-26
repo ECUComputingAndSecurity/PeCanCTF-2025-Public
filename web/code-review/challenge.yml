@@ -1,0 +1,24 @@
+name: Code Review
+author: ScriptKidding
+category: web
+description: |-
+  CodeCTF is now open for a new wave of submissions. Do you think your challenges will be accepted? Please make sure you review the code THOROUGHLY!!!
+
+attribution: ScriptKidding
+type: dynamic
+
+image: src
+protocol: https
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{c0n6r@tu\|ati0n_!!!_cha1!eng3$_acc3pt3d}
+
+version: "0.1"

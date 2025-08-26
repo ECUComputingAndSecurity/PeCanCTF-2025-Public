@@ -1,0 +1,23 @@
+name: That's Not My Unicode
+author: Raahguu
+category: crypto
+description: |
+  These strange symbols seem ancient, but they may be trying to tell you something more modern. Piece together the message hidden in plain sight — sometimes, what looks old may speak in a new language.
+attribution: Raahguu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{Un1c0d3_4nd_C15t3rc1an _Fun}
+
+files:
+- ThatsNotMyUnicode.png
+
+version: '0.1'

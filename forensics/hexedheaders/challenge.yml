@@ -1,0 +1,23 @@
+name: HexedHeaders
+author: Riley Grimwood
+category: forensics
+description: |
+  This file seems to contain secrets... But how to get in...
+attribution: Riley Grimwood
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{h3x_and_hea43r2}
+
+files:
+- pecanctflogo.jpg
+
+version: '0.1'

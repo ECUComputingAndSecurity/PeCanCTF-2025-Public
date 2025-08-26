@@ -1,0 +1,1 @@
+The last step in Doors intends for users to patch out the debugger check and skip execution straight to the unreachable branch within the validation function.

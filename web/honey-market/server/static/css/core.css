@@ -1,0 +1,195 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #1d232a;
+    overflow: hidden;
+
+}
+
+* {
+    color: white;
+}
+
+#frame {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+}
+
+#banner {
+    background-color: rgba(59, 54, 54, 0.126);
+    padding: 0.8em;
+    border-right: 1px solid rgba(92, 92, 92, 0.324);
+    display: flex;
+    flex: 1;
+}
+
+#banner>div {
+    margin: auto;
+}
+
+
+
+#banner>div>div>* {
+    transition: all 0.3s ease;
+}
+
+#banner>div>div:hover img {
+    transform: rotate(0deg);
+}
+
+#hallofame {
+    font-family: font2;
+}
+
+#banner>div>div>h1 {
+    margin: auto;
+    margin-left: 0;
+    color: #feb167;
+    font-family: font1;
+    font-size: 3em;
+}
+
+#banner>div>div>img {
+    transform: rotate(25deg);
+    height: 5em;
+    width: 5em;
+}
+
+#banner>div>div {
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    gap: 15px;
+    margin-left: 0;
+    width: 14em;
+    animation: popdown 1s forwards;
+}
+
+
+#banner p {
+    margin-top: 2em;
+    width: 32em;
+    text-align: justify;
+    animation: leftto 1s forwards;
+}
+
+#banner>div:nth-child(1) a {
+    animation: popup 1s forwards;
+}
+
+
+#content {
+    flex: 1;
+    padding: 1.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 2em;
+    overflow: auto;
+}
+
+@keyframes popdown {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes leftto {
+    from {
+        opacity: 0;
+        transform: translateX(-2em);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(2em);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#trophies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em !important;
+    flex: 1;
+}
+
+#content>div {
+    display: flex;
+    gap: 1em;
+}
+
+#content>div:nth-child(1) {
+    flex-direction: column;
+}
+
+/* #content>div>img {
+    height: 2.6em;
+    width: 2.6em;
+    margin: auto;
+} */
+
+#content>div>h1 {
+    font-size: 1.6em;
+    margin: auto;
+    margin-top: 0;
+}
+
+#content>div>section p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.377);
+}
+
+
+#trophies>div {
+    opacity: 0;
+    animation: popup 0.7s forwards;
+    transition: all 0.3s ease;
+}
+
+.pending {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    right: 0;
+    height: 30em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4em;
+}
+
+.card-body>div img {
+    height: 3em;
+    width: 3em;
+}
+
+.card-body>div {
+    display: flex;
+    gap: 1em !important;
+}

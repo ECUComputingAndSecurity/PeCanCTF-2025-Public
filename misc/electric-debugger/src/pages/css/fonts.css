@@ -1,0 +1,14 @@
+
+@font-face {
+  font-family: 'font1';
+  src: url('./fonts/AnonymiceProNerdFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'font2';
+  src: url('./fonts/MonofurNerdFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,21 @@
+name: Travelling Around
+author: Monique Cornall
+category: osint
+description: |
+  Hmm… Corn Man seems to have visited some interesting places, in a very weird route. Could it mean anything? Maybe the suburbs hold a clue... The posts might contain a "pointer" in the right direction...
+  Remember to wrap the flag in pecan{}, use uppercase letters, and separate the words with an underscore. E.g. `pecan{I_LOVE_PECAN}`
+attribution: Monique Cornall
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{PHOTOGRAPHY_GENIUS}
+
+version: '0.1'

@@ -1,0 +1,27 @@
+name: ByteRunner Delivery Services
+author: Ashley Lamont
+category: web
+description: |
+  ByteRunner Delivery Services is a global logistics company that prides itself on delivering packages quickly and efficiently.
+  Their new website lets you quickly and easily reach out to their support team!
+  Plus, it's all securely hosted on their company network, which means that your sensitive customer info can't be exposed to the open internet.
+attribution: Ashley Lamont
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{signed_sealed_spoofed}
+
+files: []
+
+image: .
+port: 8080
+
+version: '0.1'

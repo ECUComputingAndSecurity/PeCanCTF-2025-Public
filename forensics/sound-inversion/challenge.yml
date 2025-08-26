@@ -1,0 +1,23 @@
+name: Sound Inversion
+author: Raahguu
+category: forensics
+description: |
+  Soldier, we believe that the enemy has hidden a spoken audio message somewhere in this file. Find it, and report back immediately.
+attribution: Raahguu
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{hidden_audio_only_ononeear}
+
+files:
+- Sound_Inversion.wav
+
+version: '0.1'

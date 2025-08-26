@@ -1,0 +1,27 @@
+name: Full Stack Reconnaissance
+author: Kaled Aljebur
+category: web
+description: |
+  This challenge is designed to simulate realistic full-stack application scenarios, featuring a React frontend and a Flask backend.
+attribution: Kaled Aljebur
+type: dynamic
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+image: ./frontend
+protocol: https
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{flag1_!shfHUkf^32Gaf*/}
+
+hints:
+  - What is a full stack application? Check background traffic.
+
+next: Full Stack Reconnaissance 2
+
+version: "0.1"

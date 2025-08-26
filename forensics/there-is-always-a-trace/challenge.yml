@@ -1,0 +1,23 @@
+name: There is always a trace
+author: Flqmmooble
+category: forensics
+description: |
+  You have been hired by the NSA and it is your first day on the job. For your first task, they have given you a suspicious looking file with hardly any context except that it was retrieved off an individual's laptop who had been suspected of compromising a government server remotely.
+attribution: Flqmmooble
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: PECAN{RDP_C4n_r3ve4L_cOoL_inFO!}
+
+files:
+- suspiciousfile32.bmc
+
+version: '0.1'

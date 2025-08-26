@@ -1,0 +1,23 @@
+name: Dogs Always Know
+author: Starnsworth
+category: steg
+description: |
+  Dogs have a nose for secrets—buried deep, where no one thinks to look. Trust their instincts; sometimes, what's hidden isn't in plain sight, but in the bones beneath the surface.
+attribution: Starnsworth
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+  - type: static
+    data: case_insensitive
+    content: pecan{tastes_like_chicken}
+
+files:
+  - sigrun.jpg
+
+version: "0.1"

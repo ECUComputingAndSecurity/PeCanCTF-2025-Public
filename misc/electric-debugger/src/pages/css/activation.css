@@ -1,0 +1,102 @@
+
+body,html{
+    padding: 0;
+    margin: 0;
+}
+#main{
+    background-color: rgb(35, 35, 35);
+    width: 100vw;
+    height: 100vh;
+    padding: 2em;
+    box-sizing: border-box;
+    position: relative;
+}
+
+p{
+    font-size: 15px;
+    margin-left: 2.9em;
+    line-height: 17px;
+    width: 80%;
+    text-align: justify;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.646);
+    margin-bottom: 2em;
+    margin-bottom: 1em;
+}
+
+label,p{
+    font-family: font2;
+}
+
+label{
+    color : white;
+}
+
+h1{
+    font-family: font1;
+    color: white;
+    font-size: 1.5em;
+    margin : auto;
+    margin-top: 0;
+    margin-left: 0.7em;
+}
+
+*{
+    user-select: none;
+}
+
+#main > div img{
+    height: 1.8em;
+    width: 1.8em;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+#main > div{
+    display: flex;
+}
+
+button{
+    color : white;
+    border-radius: 0px;
+    position: absolute;
+    bottom: 2em;
+    right: 2.4em;
+    /* background-color: rgb(8, 7, 7); */
+    	cursor: pointer;
+	outline: inherit;
+    /* border: none; */
+    padding: 0.5em;
+    width: 7em;
+    height: 3em;
+    font-size: 0.8em;
+        border : 1px solid white;
+    background-color: transparent;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    opacity: 1;
+}
+
+
+input:focus{
+    outline: none;
+    border : 1px solid rgb(179, 0, 228);
+}
+
+input{
+    transition: 0.3s ease;
+    margin-left: 3em;
+    padding: 1em;
+    width: 85%;
+    font-size: 0.8em;
+    color : white;
+    background-color: transparent;
+    border : 1px solid rgba(255, 255, 255, 0.257);
+}

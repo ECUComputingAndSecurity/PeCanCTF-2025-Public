@@ -1,0 +1,24 @@
+name: Too Many Flags
+author: Chelsea Pritchard (`dotefekts`)
+category: rev
+description: |
+  We've found this file full of flags but we don't know which one is the right one! Can you figure out how these flags were generated and find the right one?
+attribution: Chelsea Pritchard (`dotefekts`)
+type: dynamic
+
+extra:
+  initial: 500
+  decay: 4
+  function: linear
+  minimum: 100
+
+flags:
+- type: static
+  data: case_insensitive
+  content: pecan{r3d_h3rr1ng_h4sh3s}
+
+files:
+- flags.txt
+- flag_gen.py
+
+version: '0.1'
